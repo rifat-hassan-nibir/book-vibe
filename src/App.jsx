@@ -1,8 +1,12 @@
+import Banner from "./components/Banner";
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
-    <>
-      <h1 className="text-3xl">hello</h1>
-    </>
+    <div className="lg:px-0 px-3">
+      <Navbar></Navbar>
+      <Banner></Banner>
+    </div>
   );
 }
 
