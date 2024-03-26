@@ -13,21 +13,21 @@ const Navbar = () => {
             </svg>
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <NavLink to="/">
+            <NavLink to="/" className={({ isActive }) => (isActive ? " text-green-400 " : "")}>
               <button>Home</button>
             </NavLink>
-            <NavLink to="/listed-books">
+            <NavLink to="/listed-books" className={({ isActive }) => (isActive ? " text-green-400" : "")}>
               <button>Listed Books</button>
             </NavLink>
-            <NavLink to="/pages-to-read">
+            <NavLink to="/pages-to-read" className={({ isActive }) => (isActive ? " text-green-400" : "")}>
               <button>Pages To Read</button>
             </NavLink>
-            <NavLink to="/pages-to-read">
+            <Link>
               <button>Sign Up</button>
-            </NavLink>
-            <NavLink to="/pages-to-read">
+            </Link>
+            <Link>
               <button>Sign In</button>
-            </NavLink>
+            </Link>
           </ul>
         </div>
 
@@ -39,27 +39,36 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="lg:flex gap-[48px] text[#150b2bb3] text-[16px] hidden">
-          <NavLink to="/">
+        <div className="lg:flex items-center text[#150b2bb3] text-[16px] hidden">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "border border-green-400 text-green-400 font-bold rounded-lg px-5 py-3" : "px-5 py-3")}
+          >
             <button>Home</button>
           </NavLink>
-          <NavLink to="/listed-books">
+          <NavLink
+            to="/listed-books"
+            className={({ isActive }) => (isActive ? "border border-green-400 text-green-400 font-bold px-5 py-3 rounded-lg" : "px-5 py-3")}
+          >
             <button>Listed Books</button>
           </NavLink>
-          <NavLink to="/pages-to-read">
+          <NavLink
+            to="/pages-to-read"
+            className={({ isActive }) => (isActive ? "border border-green-400 text-green-400 font-bold px-5 py-3 rounded-lg" : "px-5 py-3")}
+          >
             <button>Pages To Read</button>
           </NavLink>
         </div>
         <div className="space-x-[16px] hidden lg:block">
           <button>
-            <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
+            <Link className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
               Sign In
-            </a>
+            </Link>
           </button>
           <button>
-            <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-500 rounded-md hover:bg-blue-400 sm:w-auto sm:mb-0">
+            <Link className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-500 rounded-md hover:bg-blue-400 sm:w-auto sm:mb-0">
               Sign Up
-            </a>
+            </Link>
           </button>
         </div>
       </div>
