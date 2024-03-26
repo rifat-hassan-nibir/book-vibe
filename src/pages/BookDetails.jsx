@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -6,6 +6,39 @@ const BookDetails = () => {
   const idInt = parseInt(id);
   const book = books.find((book) => book.id === idInt);
   const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
+
+  // Local Storage
+
+  const handleAddToRead = () => {
+    const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
+    const savedWishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks")) || [];
+    const bookExists = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
+    if (bookExists) {
+      alert("Book already read");
+    } else {
+      savedReadBooks.push(book);
+      const newWishlistAfterReadBook = savedWishlistBooks.filter((savedWishlistBook) => savedWishlistBook.id !== book.id);
+      localStorage.setItem("readBooks", JSON.stringify(savedReadBooks));
+      localStorage.setItem("wishlistBooks", JSON.stringify(newWishlistAfterReadBook));
+      alert("book readed");
+    }
+  };
+
+  const handleAddToWishlist = () => {
+    const savedWishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks")) || [];
+    const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
+    const isReadBook = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
+    const isWishlisted = savedWishlistBooks.find((savedWishlistBook) => savedWishlistBook.id === book.id);
+    if (isReadBook) {
+      alert("You have already read this book");
+    } else if (isWishlisted) {
+      alert("Already added to wishlist");
+    } else {
+      savedWishlistBooks.push(book);
+      localStorage.setItem("wishlistBooks", JSON.stringify(savedWishlistBooks));
+      alert("added to wishlist");
+    }
+  };
   return (
     <div className="mb-[50px] lg:mb-[100px]">
       <div className="flex flex-col lg:flex-row lg:items-center gap-[24px] lg:gap-[48px] ">
@@ -55,20 +88,20 @@ const BookDetails = () => {
             </tbody>
           </table>
           <div className="flex gap-4">
-            <Link
-              to="/"
+            <button
+              onClick={() => handleAddToRead()}
               className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-black rounded-md border border-[#1313134d] hover:bg-slate-200 font-bold sm:w-auto sm:mb-0"
               data-rounded="rounded-2xl"
             >
               Read
-            </Link>
-            <Link
-              to="/"
+            </button>
+            <button
+              onClick={() => handleAddToWishlist()}
               className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-[#50B1C9] hover:bg-[#50B9F9] rounded-md  font-bold sm:w-auto sm:mb-0"
               data-rounded="rounded-2xl"
             >
               Wishlist
-            </Link>
+            </button>
           </div>
         </div>
       </div>
