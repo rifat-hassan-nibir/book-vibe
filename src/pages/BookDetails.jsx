@@ -47,7 +47,7 @@ const BookDetails = () => {
         </div>
         <div className="lg:w-[50%] space-y-5">
           <h1 className="text-[24px] lg:text-[40px] font-bold text-[#131313]">{bookName}</h1>
-          <p className="text-[16px] lg:text-[20px] font-medium">By : {author}</p>
+          <p className="text-[16px] lg:text-[20px] text-[#131313cc] font-medium">By : {author}</p>
           <hr />
           <p className="text-[16px] lg:text-[20px] font-medium">By : {category}</p>
           <hr />
@@ -58,7 +58,7 @@ const BookDetails = () => {
             <p className="font-bold text-[#131313]">Tag</p>
             {tags.map((tag, index) => (
               <p key={index} className="text-[14px] lg:text-[16px] py-2 px-4 border rounded-full text-[#131313b3]">
-                {tag}
+                #{tag}
               </p>
             ))}
           </div>

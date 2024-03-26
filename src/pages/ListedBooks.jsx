@@ -13,9 +13,7 @@ const ListedBooks = () => {
       {/* Sort */}
       <div className="text-center mt-[16px] lg:mt-[32px]">
         <select className="select select-bordered w-44 bg-[#23BE0A] rounded-lg font-medium text-white">
-          <option disabled selected>
-            Sort by
-          </option>
+          <option>Sort by</option>
           <option>Rating</option>
           <option>Number of Pages</option>
           <option>Published Year</option>
@@ -23,7 +21,7 @@ const ListedBooks = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-start mt-[20px] lg:mt-[56px] overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap">
+      <div className="flex items-start mt-[20px] lg:mt-[56px] mb-[16px] lg:mb-[32px] overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap">
         <Link
           to={``}
           onClick={() => setTabIndex(0)}
@@ -45,7 +43,9 @@ const ListedBooks = () => {
       </div>
 
       {/* Outlet */}
-      <Outlet></Outlet>
+      <div className="mb-[50px] lg:mb-[100px]">
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
