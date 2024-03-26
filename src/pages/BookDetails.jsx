@@ -6,9 +6,8 @@ const BookDetails = () => {
   const idInt = parseInt(id);
   const book = books.find((book) => book.id === idInt);
   const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
-  console.log(book);
   return (
-    <div>
+    <div className="mb-[50px] lg:mb-[100px]">
       <div className="flex flex-col lg:flex-row lg:items-center gap-[24px] lg:gap-[48px] ">
         <div className="bg-[#1313130d] p-[35px] lg:p-[72px] rounded-2xl lg:w-[50%]">
           <img src={image} alt="" />
@@ -58,16 +57,14 @@ const BookDetails = () => {
           <div className="flex gap-4">
             <Link
               to="/"
-              href="#_"
-              className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-black  rounded-md border border-[#1313134d] font-bold sm:w-auto sm:mb-0"
+              className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-black rounded-md border border-[#1313134d] hover:bg-slate-200 font-bold sm:w-auto sm:mb-0"
               data-rounded="rounded-2xl"
             >
               Read
             </Link>
             <Link
               to="/"
-              href="#_"
-              className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-[#50B1C9] rounded-md  font-bold sm:w-auto sm:mb-0"
+              className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-[#50B1C9] hover:bg-[#50B9F9] rounded-md  font-bold sm:w-auto sm:mb-0"
               data-rounded="rounded-2xl"
             >
               Wishlist

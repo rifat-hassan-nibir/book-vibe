@@ -61,12 +61,12 @@ const Navbar = () => {
         </div>
         <div className="space-x-[16px] hidden lg:block">
           <button>
-            <Link className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
+            <Link className="inline-flex font-bold items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
               Sign In
             </Link>
           </button>
           <button>
-            <Link className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-500 rounded-md hover:bg-blue-400 sm:w-auto sm:mb-0">
+            <Link className="inline-flex font-bold items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-[#59C6D2] rounded-md hover:bg-blue-400 sm:w-auto sm:mb-0">
               Sign Up
             </Link>
           </button>
