@@ -1,14 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainLayout from "./layout/MainLayout.jsx";
+import ListedBooks from "./pages/ListedBooks.jsx";
+import PagesToRead from "./pages/PagesToRead.jsx";
+import Home from "./pages/Home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("../booksData.json"),
+      },
+      {
+        path: "/listed-books",
+        element: <ListedBooks></ListedBooks>,
+      },
+      {
+        path: "/pages-to-read",
+        element: <PagesToRead></PagesToRead>,
+      },
+    ],
   },
 ]);
 

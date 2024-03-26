@@ -1,5 +1,4 @@
-import { CgProfile } from "react-icons/cg";
-import { IoIosSearch } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -14,15 +13,15 @@ const Navbar = () => {
             </svg>
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Listed Books</a>
-            </li>
-            <li>
-              <a>Pages To Read</a>
-            </li>
+            <NavLink to="/">
+              <button>Home</button>
+            </NavLink>
+            <NavLink to="/listed-books">
+              <button>Listed Books</button>
+            </NavLink>
+            <NavLink to="/pages-to-read">
+              <button>Pages To Read</button>
+            </NavLink>
           </ul>
         </div>
 
@@ -33,18 +32,24 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="lg:flex gap-[48px] text[#150b2bb3] text-[16px] hidden">
-          <button>Home</button>
-          <button>Listed Books</button>
-          <button>Pages To Read</button>
+          <NavLink to="/">
+            <button>Home</button>
+          </NavLink>
+          <NavLink to="/listed-books">
+            <button>Listed Books</button>
+          </NavLink>
+          <NavLink to="/pages-to-read">
+            <button>Pages To Read</button>
+          </NavLink>
         </div>
         <div className="space-x-[16px]">
           <button>
-            <a class="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
+            <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
               Sign In
             </a>
           </button>
           <button>
-            <a class="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-400 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
+            <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-400 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
               Sign Up
             </a>
           </button>
