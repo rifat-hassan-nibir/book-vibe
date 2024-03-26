@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -22,12 +22,20 @@ const Navbar = () => {
             <NavLink to="/pages-to-read">
               <button>Pages To Read</button>
             </NavLink>
+            <NavLink to="/pages-to-read">
+              <button>Sign Up</button>
+            </NavLink>
+            <NavLink to="/pages-to-read">
+              <button>Sign In</button>
+            </NavLink>
           </ul>
         </div>
 
         {/* Website Title */}
         <div>
-          <h1 className="lg:text-[32px] text-[18px] font-bold text-[#150B2B]">Book Vibe</h1>
+          <Link to="/">
+            <h1 className="lg:text-[32px] text-[18px] font-bold text-[#150B2B]">Book Vibe</h1>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
@@ -42,14 +50,14 @@ const Navbar = () => {
             <button>Pages To Read</button>
           </NavLink>
         </div>
-        <div className="space-x-[16px]">
+        <div className="space-x-[16px] hidden lg:block">
           <button>
             <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
               Sign In
             </a>
           </button>
           <button>
-            <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-400 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0">
+            <a className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-blue-500 rounded-md hover:bg-blue-400 sm:w-auto sm:mb-0">
               Sign Up
             </a>
           </button>
