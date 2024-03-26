@@ -4,8 +4,11 @@ const WishListedBooks = () => {
   const savedWishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks"));
   return (
     <div>
+      <div>
+        <h1 className={`text-2xl font-medium ${savedWishlistBooks ? "hidden" : "block"}`}>No wishlisted books</h1>
+      </div>
       <div className="flex flex-col gap-[12px] lg:gap-[24px]">
-        {savedWishlistBooks.map((savedWishlistBook, index) => (
+        {savedWishlistBooks?.map((savedWishlistBook, index) => (
           <ReadAndWishlistCard book={savedWishlistBook} key={index}></ReadAndWishlistCard>
         ))}
       </div>
