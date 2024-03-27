@@ -41,7 +41,7 @@ const ReadAndWishlistCard = ({ book }) => {
               <p>Total Pages: {totalPages}</p>
             </div>
           </div>
-          <hr />
+          <hr className="w-full" />
           <div className="flex flex-col lg:flex-row lg:items-center gap-[16px]">
             <div className="flex gap-3">
               <p className="text-[14px] lg:text-[16px] py-2 px-4 border rounded-full text-[#131313b3]">Category: {category}</p>
