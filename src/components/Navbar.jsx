@@ -22,6 +22,12 @@ const Navbar = () => {
             <NavLink to="/pages-to-read" className={({ isActive }) => (isActive ? " text-green-400" : "")}>
               <button>Pages To Read</button>
             </NavLink>
+            <NavLink to="/blogs" className={({ isActive }) => (isActive ? " text-green-400" : "")}>
+              <button>Blogs</button>
+            </NavLink>
+            <NavLink to="/contact" className={({ isActive }) => (isActive ? " text-green-400" : "")}>
+              <button>Contact</button>
+            </NavLink>
             <Link>
               <button>Sign Up</button>
             </Link>
@@ -57,6 +63,18 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? "border border-green-400 text-green-400 font-bold px-5 py-3 rounded-lg" : "px-5 py-3")}
           >
             <button>Pages To Read</button>
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) => (isActive ? "border border-green-400 text-green-400 font-bold px-5 py-3 rounded-lg" : "px-5 py-3")}
+          >
+            <button>Blogs</button>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "border border-green-400 text-green-400 font-bold px-5 py-3 rounded-lg" : "px-5 py-3")}
+          >
+            <button>Contact</button>
           </NavLink>
         </div>
         <div className="space-x-[16px] hidden lg:block">
