@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Website Title */}
         <div>
           <Link to="/">
-            <h1 className="lg:text-[32px] text-[18px] font-bold text-[#150B2B]">Book Vibe</h1>
+            <h2 className="lg:text-[32px] text-[18px] font-bold text-[#150B2B]">Book Vibe</h2>
           </Link>
         </div>
 

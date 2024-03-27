@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveReadBookDataToLocalStorage, savedWishlistBookDataToLocalStorage } from "../utils/localStorage";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -11,11 +12,31 @@ const BookDetails = () => {
   // Local Storage
 
   const handleAddToRead = () => {
-    saveReadBookDataToLocalStorage(book);
+    const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
+    const bookExists = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
+    if (bookExists) {
+      toast.error("You already read this book");
+    } else {
+      savedReadBooks.push(book);
+      localStorage.setItem("readBooks", JSON.stringify(savedReadBooks));
+      toast.success("You have already read this book");
+    }
   };
 
   const handleAddToWishlist = () => {
-    savedWishlistBookDataToLocalStorage(book);
+    const savedWishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks")) || [];
+    const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
+    const isReadBook = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
+    const isWishlisted = savedWishlistBooks.find((savedWishlistBook) => savedWishlistBook.id === book.id);
+    if (isReadBook) {
+      toast.error("You already read this book");
+    } else if (isWishlisted) {
+      toast.error("Already added to wishlist");
+    } else {
+      savedWishlistBooks.push(book);
+      localStorage.setItem("wishlistBooks", JSON.stringify(savedWishlistBooks));
+      toast.success("Added to wishlist");
+    }
   };
   return (
     <div className="mb-[50px] lg:mb-[100px]">
