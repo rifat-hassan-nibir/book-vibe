@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveReadBookDataToLocalStorage, savedWishlistBookDataToLocalStorage } from "../utils/localStorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -10,34 +11,11 @@ const BookDetails = () => {
   // Local Storage
 
   const handleAddToRead = () => {
-    const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
-    const savedWishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks")) || [];
-    const bookExists = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
-    if (bookExists) {
-      alert("Book already read");
-    } else {
-      savedReadBooks.push(book);
-      const newWishlistAfterReadBook = savedWishlistBooks.filter((savedWishlistBook) => savedWishlistBook.id !== book.id);
-      localStorage.setItem("readBooks", JSON.stringify(savedReadBooks));
-      localStorage.setItem("wishlistBooks", JSON.stringify(newWishlistAfterReadBook));
-      alert("book readed");
-    }
+    saveReadBookDataToLocalStorage(book);
   };
 
   const handleAddToWishlist = () => {
-    const savedWishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks")) || [];
-    const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
-    const isReadBook = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
-    const isWishlisted = savedWishlistBooks.find((savedWishlistBook) => savedWishlistBook.id === book.id);
-    if (isReadBook) {
-      alert("You have already read this book");
-    } else if (isWishlisted) {
-      alert("Already added to wishlist");
-    } else {
-      savedWishlistBooks.push(book);
-      localStorage.setItem("wishlistBooks", JSON.stringify(savedWishlistBooks));
-      alert("added to wishlist");
-    }
+    savedWishlistBookDataToLocalStorage(book);
   };
   return (
     <div className="mb-[50px] lg:mb-[100px]">

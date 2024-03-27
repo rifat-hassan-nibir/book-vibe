@@ -10,16 +10,6 @@ const ListedBooks = () => {
         <h2 className="text-[18px] lg:text-[20px] font-bold">Books</h2>
       </div>
 
-      {/* Sort */}
-      <div className="text-center mt-[16px] lg:mt-[32px]">
-        <select className="select select-bordered w-44 bg-[#23BE0A] rounded-lg font-medium text-white">
-          <option>Sort by</option>
-          <option>Rating</option>
-          <option>Number of Pages</option>
-          <option>Published Year</option>
-        </select>
-      </div>
-
       {/* Tabs */}
       <div className="flex items-start mt-[20px] lg:mt-[56px] mb-[16px] lg:mb-[32px] overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap">
         <Link
@@ -32,13 +22,13 @@ const ListedBooks = () => {
           <span>Read Books</span>
         </Link>
         <Link
-          to={`author`}
+          to={`wishlist`}
           onClick={() => setTabIndex(1)}
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
             tabIndex === 1 ? "border border-b-0" : "border-b"
           } dark:border-gray-600 dark:text-gray-600`}
         >
-          <span>Wishlisted Books</span>
+          <span>Wishlist Books</span>
         </Link>
       </div>
 
