@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReadAndWishlistCard from "./ReadAndWishlistCard";
+import { IoIosArrowDown } from "react-icons/io";
 
 const ReadBooks = () => {
   const savedBooks = JSON.parse(localStorage.getItem("readBooks"));
@@ -23,8 +24,8 @@ const ReadBooks = () => {
     <div>
       {/* Sort */}
       <div className="dropdown mb-5 flex justify-center">
-        <div tabIndex={0} role="button" className="btn">
-          Sort by
+        <div tabIndex={0} role="button" className="btn bg-[#23BE0A] hover:bg-[#49AA5F] text-white">
+          Sort by <IoIosArrowDown />
         </div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
           <li>

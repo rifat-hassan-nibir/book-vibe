@@ -19,7 +19,7 @@ const BookDetails = () => {
     } else {
       savedReadBooks.push(book);
       localStorage.setItem("readBooks", JSON.stringify(savedReadBooks));
-      toast.success("You have already read this book");
+      toast.success("Added to read list");
     }
   };
 
@@ -29,7 +29,7 @@ const BookDetails = () => {
     const isReadBook = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
     const isWishlisted = savedWishlistBooks.find((savedWishlistBook) => savedWishlistBook.id === book.id);
     if (isReadBook) {
-      toast.error("You already read this book");
+      toast.error("You have already read this book");
     } else if (isWishlisted) {
       toast.error("Already added to wishlist");
     } else {
