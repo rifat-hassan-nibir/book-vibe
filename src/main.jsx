@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Contact from "./pages/Contact.jsx";
+import SingleBlogPost from "./pages/SingleBlogPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
         path: "/blogs",
         loader: () => fetch(`../blogsData.json`),
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/post/:id",
+        loader: () => fetch(`../blogsData.json`),
+        element: <SingleBlogPost></SingleBlogPost>,
       },
       {
         path: "/contact",

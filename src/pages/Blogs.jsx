@@ -1,9 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import Blog from "../components/Blog";
+import Blog from "../components/BlogCard";
 
 const Blogs = () => {
   const blogs = useLoaderData();
-  console.log(blogs);
   return (
     <div>
       <div className="w-full bg-[#1313130d] text-center py-[16px] lg:py-[33px] rounded-2xl mb-[20px] lg:mb-[50px]">
