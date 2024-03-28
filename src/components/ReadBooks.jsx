@@ -29,13 +29,13 @@ const ReadBooks = () => {
         </div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
           <li>
-            <a onClick={() => handleSorting("Rating")}>Sort By Rating</a>
+            <a onClick={() => handleSorting("Rating")}>Rating</a>
           </li>
           <li>
-            <a onClick={() => handleSorting("Pages")}>Sort By Pages</a>
+            <a onClick={() => handleSorting("Pages")}>Pages</a>
           </li>
           <li>
-            <a onClick={() => handleSorting("Published")}>Sort By Publish Date</a>
+            <a onClick={() => handleSorting("Published")}>Publish Date</a>
           </li>
         </ul>
       </div>
