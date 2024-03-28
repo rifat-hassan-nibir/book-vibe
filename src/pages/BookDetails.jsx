@@ -15,7 +15,7 @@ const BookDetails = () => {
     const savedReadBooks = JSON.parse(localStorage.getItem("readBooks")) || [];
     const bookExists = savedReadBooks.find((savedReadBook) => savedReadBook.id === book.id);
     if (bookExists) {
-      toast.error("You already read this book");
+      toast.error("You have already read this book");
     } else {
       savedReadBooks.push(book);
       localStorage.setItem("readBooks", JSON.stringify(savedReadBooks));

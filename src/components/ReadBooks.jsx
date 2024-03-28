@@ -35,7 +35,7 @@ const ReadBooks = () => {
             <a onClick={() => handleSorting("Pages")}>Pages</a>
           </li>
           <li>
-            <a onClick={() => handleSorting("Published")}>Publish Date</a>
+            <a onClick={() => handleSorting("Published")}>Publish Year</a>
           </li>
         </ul>
       </div>
