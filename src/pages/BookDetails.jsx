@@ -47,42 +47,42 @@ const BookDetails = () => {
         <div className="lg:w-[50%] space-y-5">
           <h1 className="text-[24px] lg:text-[40px] font-bold text-[#131313]">{bookName}</h1>
           <p className="text-[16px] lg:text-[20px] text-[#131313cc] font-medium">By : {author}</p>
-          <hr />
-          <p className="text-[16px] lg:text-[20px] font-medium">By : {category}</p>
-          <hr />
+          <hr className="border bg-[#13131326]" />
+          <p className="text-[16px] lg:text-[20px] font-medium">{category}</p>
+          <hr className="border bg-[#13131326]" />
           <p className="text-[14px] lg:text-[16px] text-[#131313b3]">
             <span className="font-bold text-[#131313]">Review:</span> {review}
           </p>
           <div className="flex  items-center gap-[12px]">
             <p className="font-bold text-[#131313]">Tag</p>
             {tags.map((tag, index) => (
-              <p key={index} className="text-[14px] lg:text-[16px] py-2 px-4 border rounded-full text-[#131313b3]">
+              <p key={index} className="text-[14px] lg:text-[16px] font-medium py-2 px-4 bg-[#23be0a0d] rounded-full text-[#23BE0A]">
                 #{tag}
               </p>
             ))}
           </div>
-          <hr />
+          <hr className="border bg-[#13131326]" />
           <table className="table-auto">
             <tbody>
               <tr>
-                <td className="py-[12px]">Number of Pages: </td>
+                <td className="py-[12px] text-[#131313b3]">Number of Pages: </td>
                 <td className="w-12 hidden lg:block"></td>
-                <td className="py-[12px]">{totalPages}</td>
+                <td className="py-[12px] text-[#131313] font-semibold">{totalPages}</td>
               </tr>
               <tr>
-                <td className="py-[12px]">Publisher</td>
+                <td className="py-[12px] text-[#131313b3]">Publisher</td>
                 <td className="w-12 hidden lg:block"></td>
-                <td className="py-[12px]">{publisher}</td>
+                <td className="py-[12px] text-[#131313] font-semibold">{publisher}</td>
               </tr>
               <tr>
-                <td className="py-[12px]">Year of Publishing:</td>
+                <td className="py-[12px] text-[#131313b3]">Year of Publishing:</td>
                 <td className="w-12 hidden lg:block"></td>
-                <td className="py-[12px]">{yearOfPublishing}</td>
+                <td className="py-[12px] text-[#131313] font-semibold">{yearOfPublishing}</td>
               </tr>
               <tr>
-                <td className="py-[12px]">Rating:</td>
+                <td className="py-[12px] text-[#131313b3]">Rating:</td>
                 <td className="w-12 hidden lg:block"></td>
-                <td className="py-[12px]">{rating}</td>
+                <td className="py-[12px] text-[#131313] font-semibold">{rating}</td>
               </tr>
             </tbody>
           </table>
