@@ -16,11 +16,14 @@ const TriangleBar = (props) => {
 };
 
 const PagesToRead = () => {
-  const readBooksData = JSON.parse(localStorage.getItem("readBooks"));
-  console.log(readBooksData);
+  const readBooksData = JSON.parse(localStorage.getItem("readBooks")) || [];
+
   return (
     <div className="flex justify-center">
-      <ResponsiveContainer width={1200} height={500}>
+      <div className={`${readBooksData.length ? "hidden" : "block"}`}>
+        <h1 className="text-2xl lg:text-3xl text-center mt-[50px]">Add Books to Read List to view the chart</h1>
+      </div>
+      <ResponsiveContainer width={1200} height={500} className={`${readBooksData.length ? "block" : "hidden"}`}>
         <BarChart
           data={readBooksData}
           margin={{
@@ -33,7 +36,6 @@ const PagesToRead = () => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="bookName" />
           <YAxis dataKey="totalPages" />
-          <Tooltip></Tooltip>
           <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: "top" }}>
             {readBooksData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index % 20]} />
